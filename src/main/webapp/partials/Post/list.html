@@ -1,0 +1,4 @@
+<div class="control-group post-content"  ng-repeat="post in postList">
+    <h2><a href="#/Posts/show/{{post.id}}">{{post.title}}</a></h2>
+    <div class="control-group" ng-bind-html="convert(post.content)"></div>
+</div>

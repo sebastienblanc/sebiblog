@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en" ng-app="sebiblog">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>sebiblog</title>
+    <link href="styles/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="styles/main.css" rel="stylesheet" media="screen">
+    <link href="styles/bootstrap-responsive.css" rel="stylesheet" media="screen">
+    <script src="scripts/vendor/jquery.min.js"></script>
+    <script src="scripts/vendor/aerogear.js"></script>
+	<script src="scripts/vendor/angular.js"></script>
+    <script src="scripts/vendor/angular-sanitize.min.js"></script>
+	<script src="scripts/vendor/showdown.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/services/dataService.js"></script>
+    <script src="CommentControllers.js"></script>
+    <script src="PostControllers.js"></script>
+	<script src="scripts/filters.js"></script>
+</head>
+<body>
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a class="brand" href="#">sebiblog</a>
+			</div>
+		</div>
+	</div>
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span3">
+                <nav class="well sidebar-nav" ng-controller="LoginController">
+                    <form>
+                        <div ng-show="isLoggedIn()">
+                            <button id="logout" name="logout" class="btn" ng-click="logout()">Log out</button>
+                        </div>
+                        <div ng-show="!isLoggedIn()">
+                            <input type="text" name="username" id="username" ng-model="user.username" placeholder="username"></input>
+                            <input type="password" name="password" id="password" ng-model="user.password" placeholder="password"></input>
+                             <button id="login" name="login" class="btn" ng-click="login()"><i ></i> Sign in</button>
+                             <button id="enroll" name="login" class="btn" ng-click="enroll()"><i ></i> Sign up</button>
+                        </div>
+                    <ul id="sidebar-entries" class="nav nav-list" ng-show="isAdmin()">
+                    	<li><a href="#/Posts">Manage Posts</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="span9">
+                <div id="main" class="hero-unit" ng-view>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<form id="new-Post" name="newPost" class="form-horizontal">
+    <div class="control-group">
+    </div>
+    <div class="control-group">
+    </div>
+    <div class="control-group">
+        <label for="title" class="control-label">Title</label>
+        <div class="controls">
+            <input type="text" id="title" name="title" type="text"  ng-model="post.title" placeholder="Enter the Post title"></input>
+        </div>
+    </div>
+    <div class="control-group">
+        <label for="content" class="control-label">Content</label>
+        <div class="controls">
+            <textarea class="input-xlarge" id="content" name="content" type="text"  ng-model="post.content" placeholder="Enter the Post content" rows="10"></textarea>
+        </div>
+    </div>
+   
+    <div class="control-group">
+        <div class="controls">
+            <button id="savePost" name="savePost" class="btn btn-primary" ng-disabled="isClean() || newPost.$invalid" ng-click="save()"><i class="icon-ok-sign icon-white"></i> Save</button>
+            <button id="cancel" name="cancel" class="btn" ng-click="cancel()"><i class="icon-remove-sign"></i> Cancel</button>
+            <button id="deletePost" name="deletePost" class="btn" ng-show="post.id" ng-click="remove()"><i class="icon-trash"></i> Delete</button>
+        </div>
+    <div>
+</form>

@@ -1,0 +1,39 @@
+ <div class="control-group post-content" >
+        <h2>{{post.title}}</h2>
+        <div class="control-group" ng-bind-html="converted">
+          <h3> Comments </h3>
+        </div>
+  </div>
+ <form id="new-Comment" name="newComment" class="form-horizontal">
+    <div class="control-group">
+        <label for="content" class="control-label">Comment</label>
+        <div class="controls">
+            <textarea class="input-xlarge" id="content" name="content" ng-model="comment.content" rows="3"></textarea>
+        </div>
+    </div>
+    <div class="control-group">
+        <div class="controls">
+            <button id="saveComment" name="saveComment" class="btn btn-primary" ng-click="saveComment()"><i class="icon-ok-sign icon-white"></i>Add</button>
+            <button id="cancel" name="cancel" class="btn" ng-click="cancel()"><i class="icon-remove-sign"></i> Cancel</button>
+        </div>
+    <div>
+</form>
+
+
+   <div id="search-results">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Comments</th>
+                
+            </tr>
+        </thead>
+        <tbody id="search-results-body">
+            <tr ng-repeat="result in comments">
+                <td><div class="user-comment">{{result.userName}} :</div><div>{{result.content}}</div></td>
+            </tr>
+        </tbody>
+    </table>
+ </div>   
+
+

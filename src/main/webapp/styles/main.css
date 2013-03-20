@@ -1,0 +1,16 @@
+@CHARSET "UTF-8";
+
+body{
+	padding-top: 80px;
+}
+.user-comment {
+	font-style: italic;
+	font-style: bold;
+}
+
+.post-content {
+	border-color: rgb(47, 54, 56);
+	border-style: solid;
+	border-width: 1px;
+	padding: 10px;
+}
